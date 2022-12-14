@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="javascript/index.js"></script> -->
+</head>
+<body>
+
+    <div class="content">
+        <div class="box_change">
+            <div class="open_button" onclick="openRegisterBox()">Regitrate</div>
+            <div class="open_button" onclick="openLoginBox()">Login</div>
+        </div>
+        
+        <div class="log_or_reg">
+            <form onsubmit="register(event)" action="#" class="register_box" id="register_box" >
+                Email <input type="email" id="email" name="email" placeholder="Enter your Email" required><br>
+                Password <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+                <!-- Image <input type="file" id="image" name="image" ><br>
+                Full name <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+                Birth Date <input type="date" id="birthdate" name="birthdate" required><br>
+                Birth hour <input type="time" id="birthhour" name="birthhour" ><br>
+                Gender <input type="radio"  name="gender" value="male"  required>Male <input type="radio"  name="gender" value="female" required>Female <br>
+                Favourite color <input type="color" id="color" name="color" ><br>
+                Country <select name="selectCountry" id="selectCountry">
+                             <option value="Kazakhstan">Kazakhstan</option>
+                             <option value="Russia">Russia</option>
+                             <option value="USA">USA</option>
+                        </select><br>
+                        Favourite car <input type="text" name="" id="" disabled><br> -->
+            
+            
+                        <button class="btn btn-primary" type="submit" >Registrate</button>
+                </form>
+    
+    
+                <form class="login_box" id="login_box"  onsubmit="login(event)" action="#">
+                    Email <input type="email" class="email_log"  name="email_log" placeholder="Email"> <br>
+                    Password <input type="password" name="password_log" id="password_log"> <br>
+                    <p id="error_log"></p>
+                    <button class="btn btn-primary" type="submit" >Login</button>
+    
+                </form>
+
+
+                
+        </div>
+    </div>
+    
+    <script>
+           function register(event){
+    let dannye = event.target;
+    let formdata = new FormData(dannye);
+    let obj = Object.fromEntries(formdata);
+
+    console.log(obj);
+
+    // var img = new Image();
+    // img.src = obj.image.name;
+   
+
+
+    localStorage.setItem('email', obj.email);
+    localStorage.setItem('password', obj.password);
+    // localStorage.setItem('image', img.src);
+    // localStorage.setItem('name', obj.name);
+    // localStorage.setItem('birthdate', obj.birthdate);
+    // localStorage.setItem('birthhour', obj.birthhour);
+    // localStorage.setItem('gender', obj.gender);
+    // localStorage.setItem('color', obj.color);
+    // localStorage.setItem('selectCountry', obj.selectCountry);
+    
+
+        
+  
+            $.ajax({
+              url : 'register.php',
+              type : 'POST',
+            //   data: {username: obj.name, password: obj.password,image:img.src,
+            //      email:obj.email, birthdate:obj.birthdate,birthhour:obj.birthhour,
+            //      gender:obj.gender,color:obj.color,country:obj.selectCountry
+            //       },
+            data: {email:obj.email, password: obj.password},
+              success : function (result) {
+                console.log (result); // Here, you need to use response by PHP file.
+                if(result == "Success!") console.log('success reg');
+                else alert("Wrong input");
+              },
+              error : function () {
+                console.log ('error');
+              }
+            });
+          
+          
+
+    event.preventDefault();
+}
+
+function login(event){
+    let dannye = event.target;
+    let formdata = new FormData(dannye);
+    let obj = Object.fromEntries(formdata);
+
+    let email = obj.email_log;
+    let pass = obj.password_log;
+
+    $.ajax({
+        url : 'login.php',
+       type : 'POST',
+       data: {email: email, password: pass},
+       success : function (result) {
+        
+
+       console.log (result); // Here, you need to use response by PHP file.
+       if(result == "Logged IN!") {
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', pass);
+        window.location.href = "info.html";
+       }   
+       else alert("Wrong input");
+   },
+    error : function () {
+       console.log ('error');
+   }
+        });
+    
+    event.preventDefault();
+}
+
+function info(){
+    // document.getElementById('image_info').src = localStorage.getItem('image');
+    // document.getElementById('name_info').innerHTML = localStorage.getItem('name');
+    document.getElementById('email_info').innerHTML = localStorage.getItem('email');
+    document.getElementById('password_info').innerHTML = localStorage.getItem('password');
+    // document.getElementById('birthdate_info').innerHTML = localStorage.getItem('birthdate');
+    // document.getElementById('birthhour_info').innerHTML = localStorage.getItem('birthhour');
+    // document.getElementById('gender_info').innerHTML = localStorage.getItem('gender');
+    // document.getElementById('color_info').innerHTML = localStorage.getItem('color');
+    // document.getElementById('country_info').innerHTML = localStorage.getItem('selectCountry');
+}
+
+function openRegisterBox(){
+    document.getElementById('login_box').style.display = 'none';
+    document.getElementById('register_box').style.display = 'block';
+}
+function openLoginBox(){
+    document.getElementById('login_box').style.display = 'block';
+    document.getElementById('register_box').style.display = 'none';
+}         
+    </script>
+
+
+</body>
+</html>

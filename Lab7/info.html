@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <!-- <script src="javascript/index.js"></script> -->
+    <link rel="stylesheet" href="css/info.css">
+</head>
+<body onload="info()">
+    <div class="card">
+        <!-- <img class="image_info" id="image_info" src="" alt="Person" style="width:100%" >
+        <h1 class="name_info" id="name_info"></h1> -->
+       <div class="info_divs">Email: <p class="email_info" id="email_info"></p></div> 
+       <div class="info_divs">Password: <p class="password_info" id="password_info"></p></div>
+       <!-- <div class="info_divs">Birthday: <p class="birthdate_info" id="birthdate_info"></p></div>
+       <div class="info_divs">Birth time: <p class="birthhour_info" id="birthhour_info"></p></div>
+       <div class="info_divs">Gender: <p class="gender_info" id="gender_info"></p></div>
+       <div class="info_divs">Color: <p class="color_info" id="color_info"></p></div>
+       <div class="info_divs"></div>Country: <p class="country_info" id="country_info"></p></div> -->
+      </div>  
+
+      <script>
+        function info(){
+    // document.getElementById('image_info').src = localStorage.getItem('image');
+    // document.getElementById('name_info').innerHTML = localStorage.getItem('name');
+    document.getElementById('email_info').innerHTML = localStorage.getItem('email');
+    document.getElementById('password_info').innerHTML = localStorage.getItem('password');
+    // document.getElementById('birthdate_info').innerHTML = localStorage.getItem('birthdate');
+    // document.getElementById('birthhour_info').innerHTML = localStorage.getItem('birthhour');
+    // document.getElementById('gender_info').innerHTML = localStorage.getItem('gender');
+    // document.getElementById('color_info').innerHTML = localStorage.getItem('color');
+    // document.getElementById('country_info').innerHTML = localStorage.getItem('selectCountry');
+}
+      </script>
+</body>
+</html>
