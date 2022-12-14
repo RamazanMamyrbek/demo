@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="/js/myScript.js"></script> -->
+    <title>Lab5</title>
+</head>
+<body>
+    <div class="squares">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <div class="buttons">
+        <button type="button" class="button" onclick="animal()">Animal</button>
+        <button type="button" class="button" onclick="car()">Car</button>
+        <button type="button" class="button" onclick="fruit()">Fruit</button>
+    </div>
+    <div class="buttons">
+        <button type="button" class="button" onclick="showAll()">ShowAll</button>
+    </div>
+    
+<script>
+    let arr = ['Eagle', 'Mercedes', 'BMW', 'Banana', 'Worm', 'Apple', 'Toyota', 'Tesla'];
+let animals = ['Eagle', 'Worm'];
+let cars = ['Mercedes', 'BMW','Toyota', 'Tesla'];
+let fruits = ['Banana', 'Apple'];
+var squares = document.getElementsByClassName('square');
+
+for(var i = 0; i < squares.length; i++) {
+    document.getElementsByClassName('square')[i].innerHTML = arr[i];
+}
+
+
+function animal(){
+    for(var i = 0; i < squares.length; i++){
+    if(!animals.includes(squares[i].textContent)){
+        squares[i].style.display = 'none';
+    }else{
+        squares[i].style.display='block'
+    }
+}
+}
+function car(){
+    for(var i = 0; i < squares.length; i++){
+    if(!cars.includes(squares[i].textContent)){
+        squares[i].style.display = 'none';
+    }else{
+        squares[i].style.display='block'
+    }
+}
+}
+function fruit(){
+    for(var i = 0; i < squares.length; i++){
+    if(!fruits.includes(squares[i].textContent)){
+        squares[i].style.display = 'none';
+    }else{
+        squares[i].style.display='block'
+    }
+}
+}
+function showAll(){
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.display='block';
+    }
+}
+</script>
+
+</body>
+</html>
