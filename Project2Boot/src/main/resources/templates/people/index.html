@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/peopleindex.css}" rel="stylesheet" />
+
+</head>
+<body>
+<input type="checkbox" name="" id="toggle">
+<div class="navbar_hidden_top">
+    <div>
+        <a href="people/home"><b>HOME</b></a>
+    </div>
+    <div>
+        <a href=""><b>SERVICES</b></a>
+    </div>
+    <div>
+        <a href="http://localhost:8080/people"><b>People</b></a>
+    </div>
+    <div>
+        <a href="http://localhost:8080/books"><b>Books</b></a>
+    </div>
+
+</div>
+<div class="navbar">
+    <span class="date">Monday - Friday : 09:00 - 21:00</span>
+    <div class="navcenter">
+        <a href="people/home"><b>HOME</b></a>
+        <a href=""><b>SERVICES</b></a>
+        <a href="http://localhost:8080/people"><b>People</b></a>
+        <a href="http://localhost:8080/books"><b>Books</b></a>
+    </div>
+    <div class="navright">
+        <div class="language">
+            <a href="" class="dropbtn">EN</a>
+            <div class="dropdown-content">
+                <a href="#">KAZ</a>
+                <a href="#">RUS</a>
+            </div>
+        </div>
+        <div class="login">
+            <a href="">Login</a>
+        </div>
+    </div>
+    <div class="navbar_hidden">
+        <label for="toggle">&#9776</label>
+    </div>
+</div>
+
+
+
+
+    <div class="infos">
+        <div class="person_and_button">
+            <div class="persons"  th:each="person : ${people}">
+                <iframe class="person_iframe"  th:src="@{/people/{id}(id=${person.getId()})}"
+                >user</iframe>
+            </div>
+        </div>
+        <div class="add_new_person_div">
+            <a class="add_new_person_a" href="/people/new">Добавить человека</a>
+        </div>
+    </div>
+
+    <div class="other">
+        <div class="ask">
+                <div class="otherword">Ask a Librarian</div>
+            <br>
+            <img class="askimg" src="https://libapps-eu.s3.amazonaws.com/accounts/150069/images/ask_a_librarian_full.jpeg" alt="d">
+        </div>
+    </div>
+
+<div class="footer">
+    <div class="footer1">
+        <div class="footer1_div1">
+            <img src="https://library.sdu.edu.kz/images/logo.svg" alt="">
+            <span style="padding-top: 2em;">Suleyman Demirel University</span>
+            <span>Kaskelen, Kazakhstan</span>
+        </div>
+        <div class="footer1_div2">
+            <p><a href="">About</a></p>
+            <p><a href="">Servicest</a></p>
+            <p><a href="">Ask a librarian</a></p>
+            <p><a href="">Quick links</a></p>
+            <p><a href="">Research consultations</a></p>
+            <p><a href="">Guide to the Library</a></p>
+        </div>
+        <div class="footer1_div3">
+            <h2>Contacts</h2>
+            <div>SDU Scientific Library</div>
+            <div>Office B204, Abylaikhana St. 1/1</div>
+            <div>Kaskelen, Kazakhstan</div>
+            <div>Phone: +7 (727) 307 9565 (Int. 115)</div>
+            <div>E-mail: library@sdu.edu.kz</div>
+        </div>
+        <div class="footer1_div4">
+            <h2>Follow us</h2>
+            <div>
+                <img class="footer1_div4_img" src="src/main/resources/static/img/fb.png" alt="">
+                <img class="footer1_div4_img" src="src/main/resources/static/img/ig.png" alt="">
+                <img class="footer1_div4_img" src="src/main/resources/static/img/tw.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <p>2022, All rights reserved</p>
+    </div>
+</div>
+</body>
+</html>

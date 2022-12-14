@@ -1,0 +1,70 @@
+body {
+    background-image: url(https://avatars.mds.yandex.net/i?id=ec38e7d3d661ff869efc7b6a9e185755-5018153-images-thumbs&n=13);
+    background-repeat: repeat;
+    /* height: 100%;
+    width: 100%; */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.about-us{
+    color: white;
+    font-size: 60px;
+    margin-left: 100px;
+}
+
+
+.table-div{
+    margin-left: 20%;
+    align-content: center;
+}
+.table{
+    padding: 10px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+  }
+
+
+.footer {
+    bottom: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 130px;
+    
+}
+.footer1{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: 70px;
+    background-color: rgb(56, 52, 52);
+}
+
+.footer1-buttons{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer2{
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}

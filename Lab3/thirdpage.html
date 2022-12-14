@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+    background-image: url(https://avatars.mds.yandex.net/i?id=ec38e7d3d661ff869efc7b6a9e185755-5018153-images-thumbs&n=13);
+    background-repeat: repeat;
+    /* height: 100%;
+    width: 100%; */
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+    </style>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between">
+        <!-- navbar logo -->
+        <h1 class="text-primary">SDU</h1>
+        <!-- <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/79/52/92/795292df-f5ee-df22-9754-47c9a685eadd/pr_source.png/950x950bb.png" class="rounded-circle width-10px height-10px " alt="sdu"> -->
+        <!-- navbar link -->
+        <ul class="navbar-nav"> 
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <!-- dropdown -->
+            <li class="nav-item-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    KAZ
+                  </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">EN</a>
+                    <a class="dropdown-item" href="#">RUS</a>
+                </div>
+            </li>
+        </ul>     
+    </nav>
+
+    <!-- <div class="container mt-5 accordion accordion-flush " id="accordionFlushExample">
+        <div class="accordion-item bg-dark text-light">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-light">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-light">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+      </div> -->
+
+
+      
+        <!-- 1 -->
+        <div class="container accordion-item bg-dark text-light col-10 col-md-11 col-xl-5 my-3 border border-primary">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Name
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body" id="name-btn">1</div>
+            <button class="btn btn-primary" onclick="addName()">Add</button>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="container accordion-item bg-dark text-light col-10 col-md-11 col-xl-5 my-3 border border-primary">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              ID
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body" id="id-btn">2</div>
+            <button class="btn btn-primary" onclick="addId()">Add</button>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="container accordion-item bg-dark text-light col-10 col-md-11 col-xl-5 my-3 border border-primary">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Email
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body" id="email-btn">3</div>
+            <button class="btn btn-primary" onclick="addEmail()" >Add</button>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="container accordion-item bg-dark text-light col-10 col-md-11 col-xl-5 my-3 border border-primary">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              Phone Number
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body" id="number-btn">3</div>
+            <button class="btn btn-primary" onclick="addNumber()">Add</button>
+          </div>
+        </div>
+    
+    <!-- <div class=" d-flex justify-content-center row mx-0 my-5">
+        <h3 class="container text-warning d-flex justify-content-center col-10 col-md-11 col-xl-5 bg-primary my-3 ">First</h3>
+        <h3 class="container text-danger  d-flex justify-content-center col-10 col-md-5  col-xl-5 bg-primary my-3 ">Second</h3>
+        <h3 class="container text-info  d-flex justify-content-center col-10 col-md-5  col-xl-5 bg-primary my-3 ">Third</h3>
+        <h3 class="container  d-flex justify-content-center col-10 col-md-11  col-xl-5 bg-primary my-3 ">Fourth</h3>
+    </div> -->
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+<h1>q</h1>
+    
+      <img class="whatsapp-logo-img" id="logo" src="https://avatars.mds.yandex.net/i?id=b4728a70ed1b94996fa8c544aafc5065-5089089-images-thumbs&n=13" alt="">
+      
+      
+     <div class="d-flex justify-content-between p-4 bg-dark mt-auto">
+        <a href="C:\Users\ramam\OneDrive\Рабочий стол\FrontEndSDU\Lab3\index.html" class="nav-link text-light">Home</a>
+        <a href="C:\Users\ramam\OneDrive\Рабочий стол\FrontEndSDU\Lab3\about.html" class="nav-link text-light">
+            About Us</a>
+        <a href="" class="nav-link text-light">Contacts</a>   
+     </div>
+     <div class="d-flex justify-content-center bg-dark">
+        <p class="text-primary">2022 all rights <b class="text-danger">"not"</b> reserved</p>
+     </div>
+
+     <script>
+      function addName(){
+        let name = prompt('Enter your name')
+        document.getElementById("name-btn").innerHTML = name;
+      }
+      function addId(){
+        let id = prompt('Enter your Id')
+        document.getElementById("id-btn").innerHTML = id;
+      }
+      function addEmail(){
+        let email = prompt('Enter your email')
+        document.getElementById("email-btn").innerHTML = email;
+      }
+      function addNumber(){
+        let number = prompt('Enter your number')
+        document.getElementById("number-btn").innerHTML = number;
+      }
+
+      window.addEventListener('scroll',()=>{
+        const sclrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        
+        if(Math.ceil(scrolled) === 0){
+          document.getElementById('logo').style.display = 'none';
+        }
+        else if(Math.ceil(scrolled) >=50) {
+          let image = document.getElementById('logo');
+          image.style.display = 'block';
+          
+         
+
+          console.log("Bottom reached");
+        }
+      })
+
+      // window.addEventListener('scroll',()=>{
+      //   const sclrollable = document.documentElement.scrollHeight - window.innerHeight;
+      //   const scrolled = window.scrollY;
+        
+      //   if(Math.ceil(scrolled) === 0){
+      //     document.getElementById('logo').style.display = 'none';
+      //   }
+      //   else if(sclrollable===Math.ceil(scrolled)) {
+      //     let image = document.getElementById('logo');
+      //     image.style.visibility = 'visible';
+      //     image.style.position = 'fixed';
+         
+
+      //     console.log("Bottom reached");
+      //   }
+      // })
+    </script>
+</body>
+</html>

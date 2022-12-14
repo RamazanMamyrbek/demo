@@ -1,0 +1,20 @@
+.card {
+    background-color: aliceblue;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  .info_divs{
+    border: 1px solid blue;
+    
+  }
+  
+  
