@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/home_index.css}" rel="stylesheet" />
+
+    <title>Home</title>
+</head>
+<body>
+    <input type="checkbox" name="" id="toggle">  
+    <div class="navbar_hidden_top">
+            <div>
+                <a href="/people/home"><b>HOME</b></a>
+            </div>
+            <div>
+                <a href=""><b>SERVICES</b></a>
+            </div>
+            <div>
+                <a href="http://localhost:8080/people"><b>People</b></a>
+            </div>
+            <div>
+                <a href="http://localhost:8080/books"><b>Books</b></a>
+            </div>
+    </div>
+    <div class="navbar">
+        <span class="date">Monday - Friday : 09:00 - 21:00</span>
+        <div class="navcenter">
+            <a href=""><b>ABOUT</b></a>
+            <a href=""><b>SERVICES</b></a>
+            <a href="http://localhost:8080/people"><b>People</b></a>
+            <a href="http://localhost:8080/books"><b>Books</b></a>
+        </div>
+        <div class="navright">
+            <div class="language">
+                <a class="dropbtn">EN</a>
+                <div class="dropdown-content">
+                  <a href="#">KAZ</a>
+                  <a href="#">RUS</a>
+                </div>
+            </div>
+            <div class="login">
+                <a href="">Login</a>
+            </div>
+        </div>
+        <div class="navbar_hidden">
+            <label for="toggle">&#9776</label>
+        </div>
+    </div>
+
+
+    <div class="welcome">
+        <img src="https://library.sdu.edu.kz/images/logo.svg" alt="sdu">
+        <div class="welcome_string">
+            <span style="font-style:oblique; ">Welcome to</span> <b>SDU Scientific library</b>
+        </div>
+    </div>
+
+    <div class="search">
+        <input class="input" type="text" name="search" placeholder="Search...">
+        <input class="input_button" type="submit" value="Search"/>
+    </div>
+
+    <div class="upcoming">
+        <div class="upcoming1">
+            <span class="upcoming-span">UPCOMING EVENTS</span>
+            <a href="https://sdu-kz.libcal.com/calendar/training-sessions-and-events?cid=7853&t=g&d=0000-00-00&cal=7853&inc=0">See all events-></a>
+        </div>
+        <iframe class="calendar" scrolling="no" data-v-f2b53fc0="" src="https://api3-eu.libcal.com/embed_mini_calendar.php?mode=month&iid=4105&cal_id=7853&l=5&tar=0&h=457&audience=&c=&z="></iframe>
+    </div>
+
+    <div class="library_video_content">
+        <h3 class="upcoming-span">LIBRARY'S VIDEO CONTENT</h3>
+        <p s>Tutorials / Guides / Lifehacks / Podcasts</p>
+        <ul class="videos">
+            <li class="video">
+                <div class="video_div">
+                    <a href="https://www.youtube.com/watch?v=IS3jYEzgb4A">Week of online training</a>
+                    <hr>
+                    <iframe  class="sam_video" data-v-bc51b41a="" src="https://www.youtube.com/embed/IS3jYEzgb4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>                    
+                </div>              
+            </li>
+            <li class="video">
+                <div class="video_div">
+                    <a href="https://www.youtube.com/watch?v=KMGDDYt2Zvs">Services for Distance Education</a>
+                    <hr>
+                    <iframe data-v-bc51b41a="" src="https://www.youtube.com/embed/KMGDDYt2Zvs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="sam_video"></iframe>
+                </div>              
+            </li>
+            <li class="video">
+                <div class="video_div">
+                    <a href="https://www.youtube.com/watch?v=o8FFskLMe0A">Webinar of the International Company WILEY</a>
+                    <hr>
+                    <iframe data-v-bc51b41a="" src="https://www.youtube.com/embed/o8FFskLMe0A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="sam_video"></iframe>
+                </div>              
+            </li>
+        </ul>
+        <p style=" padding-top: 2em;"><a style="text-decoration: none;" href="https://www.youtube.com/channel/UCmuuTTBkfi8aUgUc56VY8kA">See all videos -></a></p>
+    </div>
+
+
+    <div class="footer">
+        <div class="footer1">
+            <div class="footer1_div1">
+                <img src="https://library.sdu.edu.kz/images/logo.svg" alt="">
+                <span style="padding-top: 2em;">Suleyman Demirel University</span>
+                <span>Kaskelen, Kazakhstan</span>
+            </div>
+            <div class="footer1_div2">
+                <p><a href="">About</a></p>
+                <p><a href="">Servicest</a></p>
+                <p><a href="">Ask a librarian</a></p>
+                <p><a href="">Quick links</a></p>
+                <p><a href="">Research consultations</a></p>
+                <p><a href="">Guide to the Library</a></p>
+            </div>
+            <div class="footer1_div3">
+               <h2>Contacts</h2>
+               <div>SDU Scientific Library</div>
+               <div>Office B204, Abylaikhana St. 1/1</div>
+               <div>Kaskelen, Kazakhstan</div>
+               <div>Phone: +7 (727) 307 9565 (Int. 115)</div>
+               <div>E-mail: library@sdu.edu.kz</div>
+            </div>
+            <div class="footer1_div4">
+                <h2>Follow us</h2>
+                <div>
+                    <img class="footer1_div4_img" src="static/img/fb.png" alt="">
+                    <img class="footer1_div4_img" src="static/img/ig.png" alt="">
+                    <img class="footer1_div4_img" src="static/img/tw.png" alt="">
+                </div>
+             </div>
+        </div>
+        
+        <div class="footer2">
+            <p>2022, All rights reserved</p>
+        </div>
+    </div>
+</body>
+</html>

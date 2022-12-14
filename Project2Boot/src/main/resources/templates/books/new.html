@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>newbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/books-new.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="area">
+    <form th:method="POST" th:action="@{/books}" th:object="${book}">
+        <label class="title_lbl" for="title">Введите название книги: </label>
+        <input class="title_input" type="text" th:field="*{title}" id="title"/>
+        <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</div>
+        <br/>
+        <label class="author_lbl" for="author">Введите автора: </label>
+        <input class="author_input" type="text" th:field="*{author}" id="author"/>
+        <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</div>
+        <br/>
+        <label class="year_lbl" for="year">Введите год: </label>
+        <input class="year_input" type="text" th:field="*{year}" id="year"/>
+        <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
+        <br/>
+        <input class="submit" type="submit" value="Создать!"/>
+    </form>
+</div>
+<div class="back">
+    <a href="javascript:history.back()">Back</a>
+</div>
+
+
+</body>
+</html>
